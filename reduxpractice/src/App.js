@@ -1,4 +1,6 @@
 import React from 'react';
+import {Button, Space} from 'antd'
+
 import { decrementAction, incrementAction } from './actions';
 
 import { useSelector, useDispatch } from 'react-redux';
@@ -19,8 +21,10 @@ function App() {
   return (
     <>
     <h2>Count : {counter}</h2>
-    <button onClick={incrementHandler}>+</button>
-    <button onClick={decrementHandler}>-</button>
+    <Space>
+    <Button type="primary" onClick={incrementHandler}>+</Button>
+    <Button type='primary' onClick={decrementHandler}>-</Button>
+    </Space>
     </>
   )
 }
