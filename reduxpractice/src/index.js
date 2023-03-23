@@ -6,32 +6,8 @@ import {legacy_createStore as createStore} from 'redux';
 
 import { Provider } from 'react-redux';
 
-const counterReducer = (state={
-  count:0
-}, action)=>{
-  if(action.type==='INCREMENT'){
-    return {
-      ...state,
-      count : state.count+1
-    }
-  }
-  else if (action.type === 'DECREMENT'){
-    return {
-      ...state,
-      count : state.count-1
-    }
-  }else{
-    return state;
-  }
-}
+import counterReducer from './reducers';
 
-export const incrementAction = {
-  type: 'INCREMENT'
-}
-
-export const decrementAction = {
-  type: 'DECREMENT'
-}
 
 const store = createStore(counterReducer);
  

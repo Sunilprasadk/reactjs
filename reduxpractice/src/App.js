@@ -1,5 +1,5 @@
 import React from 'react';
-import { decrementAction, incrementAction } from './index';
+import { decrementAction, incrementAction } from './actions';
 
 import { useSelector, useDispatch } from 'react-redux';
 
