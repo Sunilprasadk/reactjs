@@ -14,6 +14,12 @@ const counterReducer = (state={
       ...state,
       count : state.count+1
     }
+  }
+  else if (action.type === 'DECREMENT'){
+    return {
+      ...state,
+      count : state.count-1
+    }
   }else{
     return state;
   }
@@ -21,6 +27,10 @@ const counterReducer = (state={
 
 export const incrementAction = {
   type: 'INCREMENT'
+}
+
+export const decrementAction = {
+  type: 'DECREMENT'
 }
 
 const store = createStore(counterReducer);

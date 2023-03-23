@@ -1,5 +1,5 @@
 import React from 'react';
-import { incrementAction } from './index';
+import { decrementAction, incrementAction } from './index';
 
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -12,10 +12,15 @@ function App() {
     dispatch(incrementAction);
   }
 
+  function decrementHandler(){
+    dispatch(decrementAction);
+  }
+
   return (
     <>
     <h2>Count : {counter}</h2>
     <button onClick={incrementHandler}>+</button>
+    <button onClick={decrementHandler}>-</button>
     </>
   )
 }
