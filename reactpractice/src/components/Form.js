@@ -39,7 +39,7 @@ const FormComponent = (props) => {
           },
         ]}
       >
-        <Input placeholder="Enter your url here" />
+        <Input placeholder="Enter your url here"/>
       </Form.Item>
       <Form.Item>
         <Space>
