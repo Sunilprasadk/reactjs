@@ -13,7 +13,11 @@ function App() {
   }
 
   useEffect(()=>{
-    console.log("Changed !")
+    if(name===''){
+      localStorage.setItem(1, "Sunilprasad !");
+    }else{
+      console.log(localStorage.getItem(1));
+    }
   },[name]);
 
 
