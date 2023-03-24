@@ -1,17 +1,21 @@
 import {useState} from 'react';
+import FormComponent from './components/Form';
 
-import {Divider, List, Typography, Button, Space} from 'antd';
+import {Divider, List, Typography, Space} from 'antd';
 
 function App() {
 
   const [data, setData] = useState([]);
 
-  function buttonHandler(){
-    setData([...data, "Sunil"]);
+  function buttonHandler(value){
+    setData([...data, value]);
   }
 
   return (
     <div>
+      <FormComponent onClick = {buttonHandler}/>
+
+
       <Space direction='vertical'>
       <Divider orientation="left">Hello, I am the List Holder !</Divider>
       <List bordered dataSource={data} 
@@ -21,7 +25,6 @@ function App() {
         </List.Item>
       )}
     />
-      <Button type='primary' onClick={buttonHandler}>Add Me</Button>
       </Space>
     </div>
   );
