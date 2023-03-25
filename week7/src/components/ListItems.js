@@ -61,7 +61,7 @@ const ListItems = () => {
     
       return(
     <>
-      <Tabs defaultActiveKey="1" items={items}/>
+      <Tabs centered defaultActiveKey="1" items={items}/>
     </>
   )
 }
