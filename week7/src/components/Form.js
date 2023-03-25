@@ -1,18 +1,38 @@
 import { Button, Form, Input } from 'antd';
 
-
-const onFinish = (values) => {
-  console.log(values.taskname);
-};
+import {useDispatch} from 'react-redux';
 
 
-const onFinishFailed = (errorInfo) => {
-  console.log('Failed:', errorInfo);
-};
+const TaskForm = () => {
+
+  const dispatch = useDispatch();
 
 
-const TaskForm = () => (
-  <Form
+  let task = {
+    name : ''
+  }
+
+  function buttonHandler(){
+    dispatch({
+      type:'TASKADD',
+      payload:task.name
+    });
+  }
+
+  const onFinish = (values) => {
+    task.name = values.taskname;
+    buttonHandler();
+  };
+  
+  
+  const onFinishFailed = (errorInfo) => {
+    console.log('Failed:', errorInfo);
+  };
+
+
+  return(
+    <>
+    <Form
     name="basic"
 
     initialValues={{
@@ -36,9 +56,11 @@ const TaskForm = () => (
 
     <Form.Item>
       <Button type="primary" htmlType="submit">
-        Submit
+        Add Task
       </Button>
     </Form.Item>
   </Form>
-);
+  </>
+  );
+}
 export default TaskForm;
