@@ -6,8 +6,10 @@ const { TextArea } = Input;
 
   const TaskForm = () => {
 
+    //responsible for dispatching action
     const dispatch = useDispatch();
 
+    //when the function gets submitted
     function onFinish(values){
       dispatch({
         type: 'SEND',

@@ -4,16 +4,25 @@ import {Row, Col, Button, Modal} from 'antd';
 import TaskForm from './components/FormData';
 
 function App() {
+  //to make model open close
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  //show model
   const showModal = () => {
     setIsModalOpen(true);
   };
+
+  //modal ok
   const handleOk = () => {
     setIsModalOpen(false);
   };
+
+  //modal cancel
   const handleCancel = () => {
     setIsModalOpen(false);
   };
+  
+  //it gives the whole state(data)
   const data = useSelector(state=>{
     console.log(state)
   });
