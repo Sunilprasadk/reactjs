@@ -1,13 +1,20 @@
+import {useDispatch} from 'react-redux';
 import { Button, DatePicker, Form, Input, Select } from 'antd';
-  
+
 const { TextArea } = Input;
-  
+
 
   const TaskForm = () => {
 
+    const dispatch = useDispatch();
+
     function onFinish(values){
-      console.log(values);
+      dispatch({
+        type: 'SEND',
+        payload : values
+      });
     }
+
     return (
       <>
         <Form onFinish={onFinish}
@@ -42,7 +49,7 @@ const { TextArea } = Input;
               message: 'Please input your task comments!',
             },
           ]}>
-            <TextArea rows={4} />
+            <TextArea rows={4}/>
           </Form.Item>
           <Form.Item 
           label="Task Status"
